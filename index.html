@@ -50,33 +50,39 @@ comentários e me contar logo de cara: qual tutorial vocês querem que eu traga?
 </html>
 <!DOCTYPE html>
 <html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
+    <title>Tutorial de Make | Blog da Emy</title>
     <style>
         header {
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #aad2f2;
+            color: #3a1f6b;
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
             padding: 16px;
+            border-radius: 8px 8px 0 0;
         }
 
         main {
             background-color: #ffffff;
-            color: #333;
+            color: #3a1f6b;
             max-width: 800px;
             margin: 0 auto;
             padding: 16px;
+            border-radius: 0 0 8px 8px;
         }
 
         article {
             display: flex;
             gap: 16px;
             margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #aad2f2;
             align-items: flex-start;
         }
 
@@ -84,46 +90,63 @@ comentários e me contar logo de cara: qual tutorial vocês querem que eu traga?
             width: 80px;
             height: 80px;
             object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .artigo-conteudo {
+            flex: 1;
         }
 
         .artigo-autor {
             font-weight: bold;
+            color: #5b31a8;
+            margin-top: -8px;
+            margin-bottom: 8px;
         }
 
         button {
             cursor: pointer;
             padding: 6px 12px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            background-color: #f9f9f9;
+            border: 1px solid #aad2f2;
+            border-radius: 16px;
+            background-color: #f0f7fc;
+            color: #3a1f6b;
+            font-weight: bold;
+            margin-right: 8px;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background-color: #aad2f2;
         }
     </style>
 </head>
 
 <body>
     <header>
-        <h1>Nome do Blog</h1>
-        <p>Vou compartilhar sobre… </p>
+        <h1>Tutorial de Make</h1>
+        <p>Vou compartilhar meu conhecimento sobre make ✨</p>
     </header>
-    
+
     <main>
         <article>
-            <img src="imagem-blog.png" alt="Descrição curta da imagem no máximo 2 linhas.">
-            <div>
-                <h2>Título do 1º post</h2>
-                <p class="artigo-autor">Por: Meu Nome</p>
-                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar sobre...</p>
+            <img src="make.png" alt="Logotipo circular estilizado em rosa e azul do tutorial de make.">
+            <div class="artigo-conteudo">
+                <h2>Bem-vindos ao meu tutorial de make!</h2>
+                <p class="artigo-autor">Por: Emily Scremin (Emy)</p>
+                <p>Oi, galera! Sejam muito bem-vindos ao meu espaço! Todos me chamam de Emy, e criei o tutorial de make — com essa vibe icônica em rosa e azul — para ser o nosso ponto de encontro oficial para falar sobre make de um jeito leve, sincero e sem enrolação.</p>
+                <p>Por aqui, vou soltar as melhores indicações, comentar os lançamentos de make novas e falar a real sobre o que vale ou não para fazer na make, então fiquem à vontade para debater nos comentários e me contar logo de cara: qual tutorial vocês querem que eu traga? 🌌✨</p>
                 <button>❤️ <span>0</span></button>
                 <button>👍 <span>0</span></button>
             </div>
         </article>
-        
+
         <article>
-            <img src="imagem-blog.png" alt="Descrição curta da imagem no máximo 2 linhas.">
-            <div>
-                <h2>Título do 2º post</h2>
-                <p class="artigo-autor">Por: Meu Nome</p>
-                <p>Escrita do 2º post.</p>
+            <img src="make.png" alt="Logotipo circular estilizado em rosa e azul do tutorial de make.">
+            <div class="artigo-conteudo">
+                <h2>Preparação de Pele Perfeita</h2>
+                <p class="artigo-autor">Por: Emily Scremin</p>
+                <p>Em breve vou postar aqui o passo a passo de como preparar a pele antes da maquiagem para fazer a make durar o dia todo!</p>
                 <button>❤️ <span>0</span></button>
                 <button>👍 <span>0</span></button>
             </div>
@@ -135,11 +158,11 @@ comentários e me contar logo de cara: qual tutorial vocês querem que eu traga?
 
         botoes.forEach(function (botao) {
             let curtiu = false;
-            botao.addEventListener("click", botaoClicado);
-
-            function botaoClicado() {
+            
+            botao.addEventListener("click", function () {
                 console.log("fui clicado");
                 let texto = botao.querySelector("span");
+                
                 if (curtiu === false) {
                     texto.textContent++;
                     curtiu = true;
@@ -147,7 +170,7 @@ comentários e me contar logo de cara: qual tutorial vocês querem que eu traga?
                     texto.textContent--;
                     curtiu = false;
                 }
-            }
+            });
         });
     </script>
 </body>
